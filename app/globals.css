@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+:root{
+  /* Ask Lizzie Design System — April 2026 */
+  --red:       #D70015;   /* Primary accent — CTAs, active states, labels */
+  --red-dk:    #A5000F;   /* Hover/pressed state on red elements */
+  --bg:        #FFFFFF;   /* Default page and card surface */
+  --paper:     #FAFAFA;   /* Warm card surface, reference layer background */
+  --surface:   #F2F2F7;   /* Spec rows, key figures, input backgrounds */
+  --text:      #1A1A1A;   /* All body copy, headings, core UI text */
+  --sub:       #6E6E73;   /* Subheadings, captions, metadata, footer */
+  --border:    #C6C6C8;   /* Card borders, dividers — 0.5px */
+  --rule:      #EAEAEA;   /* Section dividers — 1px full-bleed */
+  /* Functional — retained for classification + multilingual UI */
+  --moss:      #3E4B42;
+  --moss-faint:#F0F3F1;
+  --amber:     #FFFBEB;
+  --amber-bdr: #E8C97A;
+  --amber-txt: #7A5500;
+  --warm:      #C4956A;
+  --warm-bg:   #FDF6EF;
+  --ok:        #4A7A5A;
+  /* Legacy aliases (used by unchanged code paths) */
+  --ink:       #1A1A1A;
+  --ink-m:     #1A1A1A;
+  --ink-l:     #6E6E73;
+  --ink-f:     #6E6E73;
+  --hairline:  #C6C6C8;
+  --surface2:  #F2F2F7;
+  /* Spacing */
+  --space-4:   4px;
+  --space-8:   8px;
+  --space-12:  12px;
+  --space-14:  14px;
+  --space-16:  16px;
+  --space-20:  20px;
+  --space-22:  22px;
+  --space-24:  24px;
+  --space-28:  28px;
+  --space-32:  32px;
+  --space-40:  40px;
+  /* Radii */
+  --radius-card:   6px;
+  --radius-button: 4px;
+  --radius-chip:   6px;
+  --radius-badge:  3px;
+  /* Shadow */
+  --shadow-card: 0 1px 3px rgba(26,26,26,0.04), 0 8px 32px -4px rgba(26,26,26,0.08);
+  /* Typography */
+  --serif:     'Playfair Display', Georgia, serif;
+  --sans:      Inter, Arial, sans-serif;
+}
+
+html,body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  min-height:100dvh;
+  font-size:15px;
+  line-height:1.62;
+  -webkit-text-size-adjust:100%;
+}
+
+@supports(padding: env(safe-area-inset-top)){
+  body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+}
+
+/* Full-bleed section divider */
+.divider{
+  height:1px;
+  background:var(--rule);
+  border:none;
+  margin:0;
+}
+
+/* Breathing pulse for logo */
+@keyframes breathe{
+  0%,100%{opacity:0.6;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.03)}
+}
+
+@keyframes shred{
+  0%{transform:translateY(0) scale(1);opacity:1}
+  30%{transform:translateY(4px) scale(.98);opacity:.8}
+  60%{transform:translateY(20px) scale(.92);opacity:.4}
+  100%{transform:translateY(60px) scale(.8);opacity:0}
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeIn{
+  0%{opacity:0}
+  100%{opacity:1}
+}
+
+/* Results page — sections stagger in */
+.results-card{
+  animation:fadeUp 0.45s ease both;
+}
